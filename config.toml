@@ -1,0 +1,11 @@
+baseURL = "https://tonyloveshan.com"
+languageCode = "en-us"
+title = "Tony ❤️ Helen"
+theme = "mediumish-gohugo-theme"
+
+[menu]
+    [[menu.main]]
+    name                   = "Vlogs"
+    weight                 = 20
+    identifier             = "video"
+    url                    = "/vlogs"

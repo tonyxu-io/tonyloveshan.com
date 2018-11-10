@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://tonyloveshan.com/vlogs/big-sur-and-pfeiffer-beach/</loc>
+    <lastmod>2018-11-04T21:49:09-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tonyloveshan.com/vlogs/henry-cowell-state-park/</loc>
+    <lastmod>2018-10-20T21:49:09-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tonyloveshan.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tonyloveshan.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tonyloveshan.com/</loc>
+    <lastmod>2018-11-04T21:49:09-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tonyloveshan.com/vlogs/</loc>
+    <lastmod>2018-11-04T21:49:09-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
