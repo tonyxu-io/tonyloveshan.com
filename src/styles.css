@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Caveat|Caveat+Brush|Roboto);
 
 body {
   margin:0;
+}
+
+.caveat {
+  font-family: 'Caveat'
+}
+
+.caveat-brush {
+  font-family: 'Caveat Brush'
 }

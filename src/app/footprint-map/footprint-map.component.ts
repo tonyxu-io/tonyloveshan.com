@@ -20,9 +20,9 @@ export class FootprintMapComponent implements OnInit {
   ngOnInit() {
     this.footprintPoints.getFootprintPoints().subscribe((results:any[]) => {
       var image = {
-        url: 'https://tonyloveshan.com/images/heart-marker.png',
+        url: 'https://tonyloveshan.com/assets/images/heart.png',
         // This marker is 20 pixels wide by 32 pixels high.
-        scaledSize: new google.maps.Size(30, 30),
+        scaledSize: new google.maps.Size(15, 15),
         // The origin for this image is (0, 0).
         origin: new google.maps.Point(0, 0),
         // The anchor for this image is the base of the flagpole at (0, 32).
