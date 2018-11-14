@@ -4,6 +4,8 @@ import { ViewChild } from '@angular/core';
 // import { } from 'googlemaps';
 import { FootprintPointsService } from '../footprint-points.service';
 import { Observable } from 'rxjs';
+import {MapStyles} from './mapStype';
+import MapOptions = google.maps.MapOptions;
 
 @Component({
   selector: 'app-footprint-map',
@@ -42,7 +44,8 @@ export class FootprintMapComponent implements OnInit {
     var mapProp = {
       center: new google.maps.LatLng(21.2724404, -157.8226188),
       zoom: 2,
-      disableDefaultUI: true
+      disableDefaultUI: true,
+      styles: MapStyles.clearStyle
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
   }
