@@ -1,28 +1,33 @@
 <section class="section">
   <div class="container" *ngIf="vlog$">
-    <h3 class="title is-3">{{vlog$.title}}</h3>
-    <h5 class="subtitle is-5">{{getDate() | date:'mediumDate'}}</h5>
+    <h3 class="title is-3">{{vlog$.slug | translate}}</h3>
+    <h5 class="subtitle is-5">{{getDate().toLocaleDateString()}}</h5>
     <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;">
-      <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(vlog$.streamableUrl)' frameborder="0" width="100%" height="100%"
+      <iframe [src]='streamableUrl' frameborder="0" width="100%" height="100%"
         allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>
     </div>
     <br>
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-            <p>Watch On:</p>
+            <p>{{ 'watch-on' | translate }}</p>
         </div>
         <div class="level-item">
             <div class="buttons watchButtons">
-                <a class="button is-danger" href="{{vlog$.youtubeUrl}}">YouTube</a>
-                <a class="button is-info" href="{{vlog$.bilibiliUrl}}">Bilibili</a>
+                <a class="button is-danger"  *ngIf="vlog$.youtubeUrl!==''" href="{{vlog$.youtubeUrl}}" (click)="emitYouTubeButtonClick()">{{ 'youtube' | translate }}</a>
+                <a class="button is-info" href="{{vlog$.bilibiliUrl}}" *ngIf="vlog$.bilibiliUrl" (click)="emitBilibiliButtonClick()">{{ 'bilibili' | translate }}</a>
               </div>
         </div>
       </div>
       <div class="level-right">
         <div class="level-item">
             <div class="buttons watchButtons is-right">
-                <a class="button is-danger is-outlined" href="http://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA?sub_confirmation=1">+ SUBSCRIBE</a>
+                <a class="button is-danger is-outlined" href="http://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA?sub_confirmation=1" (click)="emitYouTubeSubscribeClick()">
+                  <span class="icon">
+                      <fa-icon [icon]="faYoutube"></fa-icon>
+                  </span>
+                  <span>{{ 'subscribe' | translate }}</span>
+                </a>
               </div>
         </div>
       </div>

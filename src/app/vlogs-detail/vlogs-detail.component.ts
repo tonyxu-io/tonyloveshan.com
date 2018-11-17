@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { VlogsDataService } from '../vlogs-data.service';
-import { DomSanitizer, SafeResourceUrl, SafeUrl, Title } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { DomSanitizer, Title, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import vlogsData from '../data/vlogs';
+import { GaEventService } from '../ga-event.service';
 
 @Component({
   selector: 'app-vlogs-detail',
@@ -11,24 +12,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VlogsDetailComponent implements OnInit {
 
-  slug$: Object;
+  slug$: string;
   vlog$: Object;
+  streamableUrl: SafeResourceUrl;
+  faYoutube = faYoutube;
 
-  constructor(private vlogsDataService: VlogsDataService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title) {
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title, private gaEvent: GaEventService) {
     this.route.params.subscribe( params => this.slug$ = params.slug)
   }
 
   ngOnInit() {
-    this.vlogsDataService.getVlogs().subscribe((data: Array<Object>) => {
-      var selectedVlog = data.filter(vlog => {
-        return vlog["slug"] === this.slug$
-      })
-      this.vlog$ = selectedVlog[0];
-      this.titleService.setTitle(this.vlog$["title"] + " - Tony ❤️ Helen")
+    var selectedVlog = vlogsData.data.filter(vlog => {
+      return vlog["slug"] === this.slug$
     })
+    this.vlog$ = selectedVlog[0];
+    this.streamableUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.vlog$["streamableUrl"]);
+    this.titleService.setTitle(this.vlog$["title"] + " - Tony ❤️ Helen")
   }
 
   getDate() {
     return new Date(this.vlog$["timestamp"])
+  }
+
+  emitYouTubeButtonClick() {
+    this.gaEvent.emitEvent("Video", "YouTubePlay", this.vlog$["title"])
+  }
+
+  emitBilibiliButtonClick() {
+    this.gaEvent.emitEvent("Video", "BilibiliPlay", this.vlog$["title"])
+  }
+
+  emitYouTubeSubscribeClick() {
+    this.gaEvent.emitEvent("Video", "YouTubeChannelSubscription")
   }
 }

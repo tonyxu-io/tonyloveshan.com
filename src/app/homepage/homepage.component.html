@@ -1,26 +1,30 @@
 <app-feature-area></app-feature-area>
 <section class="section is-small has-text-centered">
   <div class="container">
-    <h1 class="title is-size-4-mobile caveat">IN LOVED SINCE</h1>
-    <h2 class="subtitle">
-      2016.04.18
-    </h2>
+    <h1 class="title is-size-4-mobile caveat">{{ 'in-loved-since' | translate }}</h1>
+    <div class="container">
+      <h2 class="subtitle">
+        {{ inLoveDate.toLocaleDateString() }} <br> {{'columbia-mo' | translate}}
+      </h2>
+    </div>
   </div>
 </section>
 <section class="section is-small has-text-centered">
   <div class="container is-centered">
-    <h1 class="title is-size-4-mobile caveat">WE LIVE IN</h1>
-    <h2 class="subtitle">
-      San Francisco Bay Area
-    </h2>
+    <h1 class="title is-size-4-mobile caveat">{{ 'we-live-in' | translate }}</h1>
+    <div class="container">
+      <h2 class="subtitle">
+        📍 {{ 'san-francisco-bay-area' | translate }}
+      </h2>
+    </div>
   </div>
 </section>
 <section class="section is-small has-text-centered">
   <div class="container">
-    <h1 class="title is-size-4-mobile caveat">OUR VLOGS</h1>
+    <h1 class="title is-size-4-mobile caveat">{{ 'our-vlogs' | translate }}</h1>
     <a routerLink="/vlogs">
       <h2 class="subtitle">
-        Tony and Helen Vlogs
+        📷 {{ 'tony-and-helen-vlogs' | translate }}
       </h2>
     </a>
   </div>

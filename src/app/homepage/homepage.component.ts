@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {faCalendarAlt, faMapPin, faVideo} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-homepage',
@@ -8,6 +9,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomepageComponent implements OnInit {
 
+  faCalendarAlt = faCalendarAlt;
+  faMapPin = faMapPin;
+  faVideo = faVideo;
+  inLoveDate = new Date(1461034800000);
   constructor(private titleService:Title) { }
 
   ngOnInit() {
