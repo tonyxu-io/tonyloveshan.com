@@ -11,6 +11,8 @@ import { VlogsHomeComponent } from './vlogs-home/vlogs-home.component';
 import { FootprintMapComponent } from './footprint-map/footprint-map.component';
 import { VlogsDetailComponent } from './vlogs-detail/vlogs-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { FooterComponent } from './footer/footer.component';
     FootprintMapComponent,
     VlogsDetailComponent,
     FooterComponent,
+    TranslatePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     Title
