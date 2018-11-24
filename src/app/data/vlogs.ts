@@ -36,6 +36,16 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/mountain-view-farmers-market-tour.jpg",
       timestamp: 1539932400000
+    },
+    {
+      title: "New York City Tour",
+      slug: "new-york-city-tour",
+      youtubeUrl: "https://youtu.be/IQQokydR_3s",
+      bilibiliUrl: "https://www.bilibili.com/video/av36627533/",
+      streamableUrl: "https://streamable.com/s/xb3mx/hapztz",
+      thumbnailUrl:
+        "/assets/images/vlogs/new-york-city-tour.jpg",
+      timestamp: 1543025119000
     }
   ]
 };

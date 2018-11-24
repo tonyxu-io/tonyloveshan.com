@@ -7,11 +7,8 @@
         allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>
     </div>
     <br>
-    <div class="level">
+    <div class="level is-mobile">
       <div class="level-left">
-        <div class="level-item">
-            <p>{{ 'watch-on' | translate }}</p>
-        </div>
         <div class="level-item">
             <div class="buttons watchButtons">
                 <a class="button is-danger"  *ngIf="vlog$.youtubeUrl!==''" href="{{vlog$.youtubeUrl}}" (click)="emitYouTubeButtonClick()">{{ 'youtube' | translate }}</a>
