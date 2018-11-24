@@ -23,6 +23,6 @@ export class FeatureAreaComponent implements OnInit {
   }
 
   isEngaged() {
-    return new Date() > new Date(1542643200000);
+    return new Date() > new Date(1542675600000);
   }
 }

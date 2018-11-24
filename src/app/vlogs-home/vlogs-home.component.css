@@ -1,3 +1,11 @@
 .container {
   margin-top: 20px;
 }
+
+.image.is-4by3 {
+  padding-top: 57%;
+}
+
+.image.is-4by3 img {
+  height: auto;
+}
