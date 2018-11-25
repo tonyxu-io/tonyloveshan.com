@@ -7,7 +7,9 @@ import zhTranslation from './data/i18n/zh';
 })
 export class TranslateService {
   data: any = {};
-  constructor() { }
+  constructor() {
+    this.use(navigator.language)
+  }
   use(lang: string): void {
     if (lang.startsWith('zh-')) {
       this.data = Object.assign({}, zhTranslation.translate || {});

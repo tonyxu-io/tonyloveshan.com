@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import vlogsData from '../data/vlogs';
 import { GaEventService } from '../ga-event.service';
+import { TranslatePipe } from '../translate.pipe';
 
 @Component({
   selector: 'app-vlogs-detail',
@@ -17,7 +18,7 @@ export class VlogsDetailComponent implements OnInit {
   streamableUrl: SafeResourceUrl;
   faYoutube = faYoutube;
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title, private gaEvent: GaEventService) {
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title, private gaEvent: GaEventService, private translatePipe: TranslatePipe) {
     this.route.params.subscribe( params => this.slug$ = params.slug)
   }
 
@@ -27,7 +28,8 @@ export class VlogsDetailComponent implements OnInit {
     })
     this.vlog$ = selectedVlog[0];
     this.streamableUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.vlog$["streamableUrl"]);
-    this.titleService.setTitle(this.vlog$["title"] + " - Tony ❤️ Helen")
+    let translatedTitle = this.translatePipe.transform(this.vlog$["slug"]);
+    this.titleService.setTitle(translatedTitle + " - Tony ❤️ Helen")
   }
 
   getDate() {
