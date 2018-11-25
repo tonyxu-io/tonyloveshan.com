@@ -13,6 +13,7 @@ import { VlogsDetailComponent } from './vlogs-detail/vlogs-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslatePipe } from './translate.pipe';
+import { VlogsPlayerComponent } from './vlogs-player/vlogs-player.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TranslatePipe } from './translate.pipe';
     VlogsDetailComponent,
     FooterComponent,
     TranslatePipe,
+    VlogsPlayerComponent,
   ],
   imports: [
     BrowserModule,
