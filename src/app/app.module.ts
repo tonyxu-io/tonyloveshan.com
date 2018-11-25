@@ -35,7 +35,8 @@ import { VlogsPlayerComponent } from './vlogs-player/vlogs-player.component';
     FontAwesomeModule
   ],
   providers: [
-    Title
+    Title,
+    TranslatePipe
   ],
   bootstrap: [AppComponent]
 })
