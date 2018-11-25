@@ -6,6 +6,7 @@ import {
 import {
   GaEventService
 } from '../ga-event.service';
+import { UserCountryService } from '../user-country.service';
 
 @Component({
   selector: 'app-vlogs-player',
@@ -20,21 +21,29 @@ export class VlogsPlayerComponent implements OnInit {
   public video: any;
   public player: any;
 
-  constructor(private gaEvent: GaEventService) {}
+  constructor(private gaEvent: GaEventService, private userCountry: UserCountryService) {}
 
-  init() {
+  ngOnInit() {
+    this.userCountry.getUserCountry()
+    .subscribe(data => {
+      if (data["country"] === "CN") {
+        this.showBilibiliPlayer()
+      } else {
+        this.showYouTubePlayer()
+      }
+    })
+    
+  }
+
+  showYouTubePlayer() {
     var tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     tag.onerror = (e) => {
       console.log(e)
-      this.fallbackToStreamable();
+      this.showBilibiliPlayer();
     }
-  }
-
-  ngOnInit() {
-    this.init();
     if (window['YT'] && window['YT']['loaded'] === 1) {
       this.initYouTubeVideo(this.vlog["youtubeId"])
     } else {
@@ -77,10 +86,10 @@ export class VlogsPlayerComponent implements OnInit {
     return Math.round(this.player.getCurrentTime())
   };
   onPlayerError() {
-    this.fallbackToStreamable();
+    this.showBilibiliPlayer();
   };
-  fallbackToStreamable() {
+  showBilibiliPlayer() {
     var player = document.getElementById("player-container");
-    player.innerHTML = `<iframe src="${this.vlog["streamableUrl"]}" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>`;
+    player.innerHTML = `<iframe src="//player.bilibili.com/player.html?aid=${this.vlog["bilibiliId"]}&page=1" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>`;
   }
 }

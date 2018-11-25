@@ -10,7 +10,7 @@
           <div class="buttons watchButtons">
             <a class="button is-danger" *ngIf="vlog$.youtubeId!==''" href="https://youtu.be/{{vlog$.youtubeId}}"
               (click)="emitYouTubeButtonClick()">{{ 'youtube' | translate }}</a>
-            <a class="button is-info" href="{{vlog$.bilibiliUrl}}" *ngIf="vlog$.bilibiliUrl" (click)="emitBilibiliButtonClick()">{{
+            <a class="button is-info" href="https://www.bilibili.com/video/av{{vlog$.bilibiliId}}" *ngIf="vlog$.bilibiliId" (click)="emitBilibiliButtonClick()">{{
               'bilibili' | translate }}</a>
           </div>
         </div>
