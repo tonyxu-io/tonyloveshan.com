@@ -3,16 +3,16 @@ export default {
     {
       title: "Big Sur and Pfeiffer Beach",
       slug: "big-sur-and-pfeiffer-beach",
-      youtubeUrl: "https://www.youtube.com/watch?v=7lTmP1bY2AE",
       bilibiliUrl: "https://www.bilibili.com/video/av35336107/",
       streamableUrl: "https://streamable.com/s/4oeah/xfrewa",
       thumbnailUrl: "/assets/images/vlogs/big-sur-and-pfeiffer-beach.jpg",
+      youtubeId: "7lTmP1bY2AE",
       timestamp: 1541314800000
     },
     {
       title: "Henry Cowell State Park Train Tour",
       slug: "henry-cowell-state-park",
-      youtubeUrl: "https://www.youtube.com/watch?v=Z0aROZI7Ezk",
+      youtubeId: "Z0aROZI7Ezk",
       bilibiliUrl: "https://www.bilibili.com/video/av35335397/",
       streamableUrl: "https://streamable.com/s/g7ttr/ghxkmp",
       thumbnailUrl: "/assets/images/vlogs/henry-cowell-state-park.jpg",
@@ -21,7 +21,7 @@ export default {
     {
       title: "Mountain View Downtown Dinner Tour",
       slug: "mountain-view-downtown-dinner-tour",
-      youtubeUrl: "https://www.youtube.com/watch?v=B6rL5Uc1Pvc",
+      youtubeId: "B6rL5Uc1Pvc",
       bilibiliUrl: "",
       streamableUrl: "https://streamable.com/s/e97lu/gbpegv",
       thumbnailUrl: "/assets/images/vlogs/mountain-view-downtown-tour.jpg",
@@ -30,7 +30,7 @@ export default {
     {
       title: "Mountain View Farmers Market Tour",
       slug: "mountain-view-farmers-market-tour",
-      youtubeUrl: "https://www.youtube.com/watch?v=rajrvYcBreY",
+      youtubeId: "rajrvYcBreY",
       bilibiliUrl: "",
       streamableUrl: "https://streamable.com/s/b6oaw/kokxvq",
       thumbnailUrl:
@@ -40,7 +40,7 @@ export default {
     {
       title: "New York City Tour",
       slug: "new-york-city-tour",
-      youtubeUrl: "https://youtu.be/IQQokydR_3s",
+      youtubeId: "IQQokydR_3s",
       bilibiliUrl: "https://www.bilibili.com/video/av36627533/",
       streamableUrl: "https://streamable.com/s/xb3mx/hapztz",
       thumbnailUrl:
