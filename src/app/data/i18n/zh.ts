@@ -19,6 +19,7 @@ export default {
     "mountain-view-farmers-market-tour": "加州山景城农贸集市游记",
     "youtube": "YouTube",
     "bilibili": "Bilibili",
-    "new-york-city-tour": "纽约旅行游记和时代广场求婚"
+    "new-york-city-tour": "纽约旅行游记和时代广场求婚",
+    "loading": "加载中..."
   }
 }

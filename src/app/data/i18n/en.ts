@@ -19,6 +19,7 @@ export default {
     "mountain-view-farmers-market-tour": "Mountain View Farmers Market Tour",
     "youtube": "YouTube",
     "bilibili": "Bilibili",
-    "new-york-city-tour": "New York City Tour and Times Square Proposal"
+    "new-york-city-tour": "New York City Tour and Times Square Proposal",
+    "loading": "LOADING..."
   }
 }
