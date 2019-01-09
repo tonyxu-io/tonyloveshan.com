@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, Title, SafeResourceUrl } from '@angular/platform-browser';
+
 import { ActivatedRoute } from '@angular/router';
+import { GaEventService } from '../ga-event.service';
+import { Title } from '@angular/platform-browser';
+import { TranslatePipe } from '../translate.pipe';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import vlogsData from '../data/vlogs';
-import { GaEventService } from '../ga-event.service';
-import { TranslatePipe } from '../translate.pipe';
 
 @Component({
   selector: 'app-vlogs-detail',
@@ -15,10 +16,9 @@ export class VlogsDetailComponent implements OnInit {
 
   slug$: string;
   vlog$: Object;
-  streamableUrl: SafeResourceUrl;
   faYoutube = faYoutube;
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title, private gaEvent: GaEventService, private translatePipe: TranslatePipe) {
+  constructor(private route: ActivatedRoute, private titleService: Title, private gaEvent: GaEventService, private translatePipe: TranslatePipe) {
     this.route.params.subscribe( params => this.slug$ = params.slug)
   }
 
@@ -27,7 +27,6 @@ export class VlogsDetailComponent implements OnInit {
       return vlog["slug"] === this.slug$
     })
     this.vlog$ = selectedVlog[0];
-    this.streamableUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.vlog$["streamableUrl"]);
     let translatedTitle = this.translatePipe.transform(this.vlog$["slug"]);
     this.titleService.setTitle(translatedTitle + " - Tony ❤️ Helen")
   }
@@ -36,12 +35,8 @@ export class VlogsDetailComponent implements OnInit {
     return new Date(this.vlog$["timestamp"])
   }
 
-  emitYouTubeButtonClick() {
-    this.gaEvent.emitEvent("Video", "YouTubePlay", this.vlog$["title"])
-  }
-
-  emitBilibiliButtonClick() {
-    this.gaEvent.emitEvent("Video", "BilibiliPlay", this.vlog$["title"])
+  emitVideoEvent(eventName) {
+    this.gaEvent.emitEvent("Video", eventName, this.vlog$["title"])
   }
 
   emitYouTubeSubscribeClick() {

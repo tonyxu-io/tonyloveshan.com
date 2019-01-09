@@ -17,9 +17,11 @@ export default {
     "henry-cowell-state-park": "Henry Cowell State Park",
     "mountain-view-downtown-dinner-tour": "Mountain View Downtown Dinner Tour",
     "mountain-view-farmers-market-tour": "Mountain View Farmers Market Tour",
+    "miami-keywest-tour": "Miami and Key West Tour",
     "youtube": "YouTube",
     "bilibili": "Bilibili",
     "new-york-city-tour": "New York City Tour and Times Square Proposal",
-    "loading": "LOADING..."
+    "loading": "LOADING...",
+    "more-videos": "more videos »"
   }
 }

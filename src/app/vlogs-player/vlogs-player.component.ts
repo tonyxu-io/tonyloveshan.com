@@ -1,8 +1,9 @@
 import {
   Component,
-  OnInit,
-  Input
+  Input,
+  OnInit
 } from '@angular/core';
+
 import {
   GaEventService
 } from '../ga-event.service';
@@ -64,6 +65,7 @@ export class VlogsPlayerComponent implements OnInit {
         'onError': this.onPlayerError.bind(this),
         'onReady': (e) => {
           document.getElementById("player").style.position = "absolute"
+          this.gaEvent.emitEvent("Video", "YouTubeVideoLoaded", this.vlog["title"])
         }
       }
     });
@@ -73,7 +75,7 @@ export class VlogsPlayerComponent implements OnInit {
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
         if (this.cleanTime() == 0) {
-          this.gaEvent.emitEvent("Video", "YouTubePlay", this.vlog["title"])
+          this.emitVideoEvent("YouTubeVideoPlayed")
         };
         break;
       case window['YT'].PlayerState.PAUSED:
@@ -91,5 +93,9 @@ export class VlogsPlayerComponent implements OnInit {
   showBilibiliPlayer() {
     var player = document.getElementById("player-container");
     player.innerHTML = `<iframe src="//player.bilibili.com/player.html?aid=${this.vlog["bilibiliId"]}&page=1" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe>`;
+    this.emitVideoEvent("BiliBiliVideoLoaded")
+  }
+  emitVideoEvent(eventName) {
+    this.gaEvent.emitEvent("Video", eventName, this.vlog["title"])
   }
 }

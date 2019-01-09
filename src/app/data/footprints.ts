@@ -270,6 +270,14 @@ export default {
     {
       coordinates: [-74.044502, 40.689247],
       title: "Statue of Liberty, New York"
+    },
+    {
+      coordinates: [-80.134850, 25.792240],
+      title: "Miami Beach, Florida"
+    },
+    {
+      coordinates: [-81.779984, 24.555059],
+      title: "Key West, Florida"
     }
   ]
 };
