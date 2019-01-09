@@ -17,9 +17,11 @@ export default {
     "henry-cowell-state-park": "亨利考威尔红杉州立国家公园",
     "mountain-view-downtown-dinner-tour": "加州山景城市中心晚餐游记",
     "mountain-view-farmers-market-tour": "加州山景城农贸集市游记",
+    "miami-keywest-tour": "迈阿密//Key West游记",
     "youtube": "YouTube",
     "bilibili": "Bilibili",
     "new-york-city-tour": "纽约旅行游记和时代广场求婚",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "more-videos": "更多视频 »"
   }
 }

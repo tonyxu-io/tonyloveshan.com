@@ -8,4 +8,6 @@
 
 .image.is-4by3 img {
   height: auto;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }

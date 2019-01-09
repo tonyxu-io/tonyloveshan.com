@@ -41,6 +41,15 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/new-york-city-tour.jpg",
       timestamp: 1543025119000
+    },
+    {
+      title: "Miami and Key West Tour",
+      slug: "miami-keywest-tour",
+      youtubeId: "a5NuAn4INDE",
+      bilibiliId: "39735569",
+      thumbnailUrl:
+        "/assets/images/vlogs/miami-keywest-tour.jpg",
+      timestamp: 1546415511000
     }
   ]
 };
