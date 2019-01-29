@@ -21,8 +21,4 @@ export class FeatureAreaComponent implements OnInit {
 
     return diffDays;
   }
-
-  isEngaged() {
-    return new Date() > new Date(1542675600000);
-  }
 }
