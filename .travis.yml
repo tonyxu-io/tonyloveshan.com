@@ -5,6 +5,9 @@ script:
 - ng build --prod
 deploy:
   provider: firebase
+  skip_cleanup: true
+  on:
+    branch: master
   token:
     secure: rZHWRPj4MhiVBeNlGspsOfR3fVtVh3ojmgNoNroZn6OxKI/PapIScGRAvb4DH+QA2EMSMiiZ8Y9ypw5IvXydRC/s8t0ecNvuXA2M2or/jPggtPo4ak3iv/OQcZKWoL5ZgtkG2/nWIaOVmEYJm0HIKFEtzpI3f2w6xn88cHoVWZC33Uu16d9bsQEvw4Obi9HYUqLJRi4cI9MOCz+NUmgwlFCpSNvNAYASDGSRkI03ghqcVOBF/4uktNyHQuA4zD8cqma2fRlFMxS8GvCK6wrydfCUSUw5i+n/8OMctOIU7Cn+TzIV8x7ebK+QjJXcZ6DDCyaDaacjnEYHfuDn+xF7Xqf5A1WxER5HAonX5ahDpaTzgVxFnVg9K3BVQthJ+C8HOAGo7lYD92fpYGtJ0JQwpWADeL9GDX/phqDczk0qwXyJNTghex4c5PKjwqM8OEKpM5CW2ey7h3WVazrGIIPLw3mMHjrzaEec2wfw720kOIAR8fSZDmaXCezPRakF3RRvz4otdhe+MUl8MMVWG9Ea3rFg72AepJ97Q98/QutdYN4GzSylOxqmOavJ1/PiFQD5a7Al2PJYHA4LUKYhTpT/h1/eL2Va4WBoJHCoMcBcScBbAnPa/QhLd4GrnYNjkeXsG+a5SLc6kkMrsx04k0jEZ9l8z8mT6q5y3nqpmi81D4A=
   project: "tonyloveshan-com"
