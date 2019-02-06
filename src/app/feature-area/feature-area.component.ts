@@ -11,11 +11,11 @@ export class FeatureAreaComponent implements OnInit {
   ngOnInit() {}
 
   getDays() {
-    var oneDay:number = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-    var firstDate: Date = new Date(2016,3,18);
+    var oneDay: number = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    var firstDate: Date = new Date(1460962800000); // 2018-04-18 PDT
     var secondDate: Date = new Date();
 
-    var diffDays:number = Math.round(
+    var diffDays:number = Math.floor(
       Math.abs((firstDate.getTime() - secondDate.getTime()) / oneDay)
     );
 
