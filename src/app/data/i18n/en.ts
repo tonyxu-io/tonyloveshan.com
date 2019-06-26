@@ -3,7 +3,7 @@ export default {
     "home": "Home",
     "vlogs": "Vlogs",
     "we-have-been-together-for": "WE HAVE BEEN TOGETHER FOR",
-    "we-are-engaged-on" : "WE'RE ENGAGED ON",
+    "we-got-married-in" : "WE GOT MARRIED IN",
     "days": "Days",
     "in-loved-since": "IN LOVED SINCE",
     "columbia-mo": "Columbia, Missouri, USA",
