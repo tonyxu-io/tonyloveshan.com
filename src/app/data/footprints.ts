@@ -278,6 +278,30 @@ export default {
     {
       coordinates: [-81.779984, 24.555059],
       title: "Key West, Florida"
-    }
+    },
+    {
+      coordinates: [-117.161087, 32.715736],
+      title: "San Diego, California"
+    },
+    {
+      coordinates: [-119.698189, 34.420830],
+      title: "Santa Barbara, California"
+    },
+    {
+      coordinates: [-118.400352, 34.073620],
+      title: "Beverly Hills, California"
+    },
+    {
+      coordinates: [-117.785355, 33.542721],
+      title: "Laguna Beach, California"
+    },
+    {
+      coordinates: [-117.175125, 32.713741],
+      title: "USS Midway Museum, California"
+    },
+    {
+      coordinates: [-117.147911, 32.732792],
+      title: "Balboa Park, California"
+    },
   ]
 };

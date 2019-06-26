@@ -3,7 +3,7 @@ export default {
     "home": "首页",
     "vlogs": "视频",
     "we-have-been-together-for": "我们已经在一起",
-    "we-are-engaged-on" : "我们订婚啦",
+    "we-got-married-in" : "我们结婚啦",
     "days": "天",
     "in-loved-since": "相爱于",
     "columbia-mo": "美国密苏里哥伦比亚",
