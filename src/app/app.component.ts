@@ -1,16 +1,17 @@
 import {
-  Component
-} from '@angular/core';
-import {
-  Router,
-  NavigationEnd
+  NavigationEnd,
+  Router
 } from '@angular/router';
-import {
-  TranslateService
-} from './translate.service';
+
 import {
   ActivatedRoute
 } from '@angular/router';
+import {
+  Component
+} from '@angular/core';
+import {
+  TranslateService
+} from './translate.service';
 
 @Component({
   selector: 'app-root',
