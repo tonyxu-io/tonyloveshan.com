@@ -26,6 +26,7 @@ export default {
     "photos": "Photos",
     "wedding-ceremony": "Wedding Ceremony",
     "san-francisco-city-hall-california": "San Francisco City Hall, California",
-    "june-18-2019": "June 18, 2019" 
+    "june-18-2019": "June 18, 2019",
+    "more-photos": "more photos"
   }
 }
