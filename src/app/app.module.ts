@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslatePipe } from './translate.pipe';
 import { VlogsPlayerComponent } from './vlogs-player/vlogs-player.component';
+import { PhotosHomeComponent } from './photos-home/photos-home.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { VlogsPlayerComponent } from './vlogs-player/vlogs-player.component';
     FooterComponent,
     TranslatePipe,
     VlogsPlayerComponent,
+    PhotosHomeComponent,
   ],
   imports: [
     BrowserModule,

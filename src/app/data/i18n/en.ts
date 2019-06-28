@@ -22,6 +22,10 @@ export default {
     "bilibili": "Bilibili",
     "new-york-city-tour": "New York City Tour and Times Square Proposal",
     "loading": "LOADING...",
-    "more-videos": "more videos »"
+    "more-videos": "more videos »",
+    "photos": "Photos",
+    "wedding-ceremony": "Wedding Ceremony",
+    "san-francisco-city-hall-california": "San Francisco City Hall, California",
+    "june-18-2019": "June 18, 2019" 
   }
 }

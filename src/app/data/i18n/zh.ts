@@ -22,6 +22,10 @@ export default {
     "bilibili": "Bilibili",
     "new-york-city-tour": "纽约旅行游记和时代广场求婚",
     "loading": "加载中...",
-    "more-videos": "更多视频 »"
+    "more-videos": "更多视频 »",
+    "photos": "相册",
+    "wedding-ceremony": "婚礼仪式",
+    "san-francisco-city-hall-california": "美国加州 旧金山",
+    "june-18-2019": "2019年6月18日" 
   }
 }
