@@ -26,6 +26,7 @@ export default {
     "photos": "相册",
     "wedding-ceremony": "婚礼仪式",
     "san-francisco-city-hall-california": "美国加州 旧金山",
-    "june-18-2019": "2019年6月18日" 
+    "june-18-2019": "2019年6月18日" ,
+    "more-photos": "更多照片"
   }
 }
