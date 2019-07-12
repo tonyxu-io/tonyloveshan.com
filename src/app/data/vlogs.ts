@@ -51,5 +51,14 @@ export default {
         "/assets/images/vlogs/miami-keywest-tour.jpg",
       timestamp: 1546415511000
     }
+    {
+      title: "San Francisco City Hall Wedding Ceremony June 18 2019",
+      slug: "san-francisco-city-hall-wedding-ceremony",
+      youtubeId: "UIZ35zCMOuk",
+      bilibiliId: "58873162",
+      thumbnailUrl:
+        "/assets/images/vlogs/wedding-video-20190618.png",
+      timestamp: 1562914211000
+    }
   ]
 };
