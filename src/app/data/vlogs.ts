@@ -50,7 +50,7 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/miami-keywest-tour.jpg",
       timestamp: 1546415511000
-    }
+    },
     {
       title: "San Francisco City Hall Wedding Ceremony June 18 2019",
       slug: "san-francisco-city-hall-wedding-ceremony",
