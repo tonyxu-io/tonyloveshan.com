@@ -28,6 +28,7 @@ export default {
     "san-francisco-city-hall-california": "美国加州 旧金山",
     "june-18-2019": "2019年6月18日" ,
     "more-photos": "更多照片",
-    "san-francisco-city-hall-wedding-ceremony": "旧金山市政厅婚礼仪式"
+    "san-francisco-city-hall-wedding-ceremony": "旧金山市政厅婚礼仪式",
+    "las-vegas-2019": "拉斯维加斯之旅 // 自助餐、赌场、马蹄湾、大峡谷、喷泉表演"
   }
 }
