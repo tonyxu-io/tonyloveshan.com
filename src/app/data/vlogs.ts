@@ -59,6 +59,15 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/wedding-video-20190618.png",
       timestamp: 1562914211000
+    },
+    {
+      title: "Las Vegas - Nov 2019",
+      slug: "las-vegas-2019",
+      youtubeId: "x6uVybYdX8A",
+      bilibiliId: "76461501",
+      thumbnailUrl:
+        "/assets/images/vlogs/las-vegas-2019.jpg",
+      timestamp: 1573621134000
     }
   ]
 };

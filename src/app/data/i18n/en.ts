@@ -28,6 +28,7 @@ export default {
     "san-francisco-city-hall-california": "San Francisco City Hall, California",
     "june-18-2019": "June 18, 2019",
     "more-photos": "more photos",
-    "san-francisco-city-hall-wedding-ceremony": "San Francisco City Hall Wedding Ceremony"
+    "san-francisco-city-hall-wedding-ceremony": "San Francisco City Hall Wedding Ceremony",
+    "las-vegas-2019": "Las Vegas Trip // Buffet, Casino, Horseshoe Bend, Grand Canyon, Water Show"
   }
 }
