@@ -68,6 +68,15 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/las-vegas-2019.jpg",
       timestamp: 1573621134000
+    },
+    {
+      title: "Portland - Nov 2019",
+      slug: "portland-2019",
+      youtubeId: "vT3teQVHyWg",
+      bilibiliId: "77877889",
+      thumbnailUrl:
+        "/assets/images/vlogs/portland-2019.jpg",
+      timestamp: 1575324047000
     }
   ]
 };
