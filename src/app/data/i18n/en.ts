@@ -30,6 +30,6 @@ export default {
     "more-photos": "more photos",
     "san-francisco-city-hall-wedding-ceremony": "San Francisco City Hall Wedding Ceremony",
     "las-vegas-2019": "Las Vegas Trip 2019 // Buffet, Casino, Horseshoe Bend, Grand Canyon, Water Show",
-    "portland-2019": "Portland Trip 2019 // Downtown, Bok Bok， Vizcaya Museum & Gardens, Nong's Khao Man Gai, Tea Bar."
+    "portland-2019": "Portland Trip 2019 // Downtown, Bok Bok, Vizcaya Museum & Gardens, Nong's Khao Man Gai, Tea Bar."
   }
 }
