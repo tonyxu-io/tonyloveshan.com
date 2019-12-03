@@ -75,7 +75,7 @@ export default {
       youtubeId: "vT3teQVHyWg",
       bilibiliId: "77877889",
       thumbnailUrl:
-        "/assets/images/vlogs/portland-2019.jpg",
+        "/assets/images/vlogs/portland-2019.png",
       timestamp: 1575324047000
     }
   ]
