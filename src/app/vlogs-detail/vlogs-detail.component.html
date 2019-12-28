@@ -2,7 +2,7 @@
   <div class="container" *ngIf="vlog$">
     <h3 class="title is-3">{{vlog$.slug | translate}}</h3>
     <h5 class="subtitle is-5">{{getDate().toLocaleDateString()}}</h5>
-    <div style="display:none;"><img src="{{vlog.thumbnailUrl}}" alt="{{vlog$.title}}"></div>
+    <div style="display:none;"><img src="{{vlog$.thumbnailUrl}}" alt="{{vlog$.title}}"></div>
     <app-vlogs-player [vlog]="vlog$"></app-vlogs-player>
     <br>
     <div class="level is-mobile">
