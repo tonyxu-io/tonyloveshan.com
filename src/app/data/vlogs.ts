@@ -77,6 +77,15 @@ export default {
       thumbnailUrl:
         "/assets/images/vlogs/portland-2019.png",
       timestamp: 1575324047000
+    },
+    {
+      title: "Maui Hawaii Honeymoon Trip at Andaz Maui Resort",
+      slug: "maui-hawaii-2019",
+      youtubeId: "6LHVJos3M20",
+      bilibiliId: "80983510",
+      thumbnailUrl:
+        "/assets/images/vlogs/maui-hawaii-2019.png",
+      timestamp: 1577519310000
     }
   ]
 };
