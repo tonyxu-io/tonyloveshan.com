@@ -2,44 +2,54 @@
   <div class="container">
     <h3 class="title is-3">{{ 'tony-and-helen-vlogs' | translate }}</h3>
     <div class="level is-mobile">
-        <div class="level-left">
-          <div class="level-item">
-              <div class="buttons watchButtons">
-                  <a class="button is-danger" href="https://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA">{{ 'youtube' | translate }}</a>
-                  <a class="button is-info" href="http://space.bilibili.com/383862434/channel/detail?cid=56093">{{ 'bilibili' | translate }}</a>
-                </div>
-          </div>
-        </div>
-        <div class="level-right">
-          <div class="level-item">
-              <div class="buttons watchButtons is-right">
-                  <a class="button is-danger is-outlined" href="http://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA?sub_confirmation=1" (click)="emitYouTubeSubscribeClick()">
-                    <span class="icon">
-                        <fa-icon [icon]="faYoutube"></fa-icon>
-                    </span>
-                    <span>{{ 'subscribe' | translate }}</span>
-                  </a>
-                </div>
+      <div class="level-left">
+        <div class="level-item">
+          <div class="buttons watchButtons">
+            <a class="button is-danger"
+              href="https://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA">{{ 'youtube' | translate }}</a>
+            <a class="button is-info"
+              href="http://space.bilibili.com/383862434/channel/detail?cid=56093">{{ 'bilibili' | translate }}</a>
           </div>
         </div>
       </div>
+      <div class="level-right">
+        <div class="level-item">
+          <div class="buttons watchButtons is-right">
+            <a class="button is-danger is-outlined"
+              href="http://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA?sub_confirmation=1"
+              (click)="emitYouTubeSubscribeClick()">
+              <span class="icon">
+                <fa-icon [icon]="faYoutube"></fa-icon>
+              </span>
+              <span>{{ 'subscribe' | translate }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="columns is-multiline">
-      <div class="column is-one-quarter" *ngFor="let vlog of vlogs$">
-        <a class="box is-paddingless" routerLink="/vlogs/{{vlog.slug}}">
+      <div class="column is-12-mobile is-6-tablet is-3-desktop" *ngFor="let vlog of vlogs$">
+        <div class="card is-slightly-rounded">
           <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="{{vlog.thumbnailUrl}}" alt="{{vlog.title}}">
+            <figure class="image">
+              <a href="/vlogs/{{vlog.slug}}">
+                <img src="{{vlog.thumbnailUrl}}" alt="{{vlog.title}}" class="is-slightly-rounded">
+              </a>
             </figure>
           </div>
           <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">{{vlog.slug | translate}}</p>
-                <p class="subtitle is-6">{{getDate(vlog).toLocaleDateString()}}</p>
-              </div>
+            <div class="content">
+              <a href="/vlogs/{{vlog.slug}}" class="has-text-black">
+                <p class="title is-4">
+                  {{vlog.title}}
+                </p>
+              </a>
+              <p class="subtitle">
+                {{getDate(vlog).toLocaleDateString()}}
+              </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>

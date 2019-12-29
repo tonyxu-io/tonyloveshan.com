@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { InstagramAccountService } from '../instagram-account.service'
+import { Observable } from 'rxjs';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 @Component({
   selector: 'app-photos-home',
   templateUrl: './photos-home.component.html',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosHomeComponent implements OnInit {
 
-  constructor() { }
+  instagramAccount$: Observable<Object>;
+  faInstagram = faInstagram;
 
-  ngOnInit() {
+  constructor(private instagramAccountService: InstagramAccountService) {
   }
 
+  ngOnInit() {
+    this.instagramAccount$ = this.instagramAccountService.getInstagramAccount()
+  }
+
+  emitInstagramFollowClick() {
+    this.gaEvent.emitEvent("Button", "InstagramFollowClick")
+  }
 }
