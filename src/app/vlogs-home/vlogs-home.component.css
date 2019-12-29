@@ -11,3 +11,7 @@
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
+
+.card {
+  height: 100%
+}

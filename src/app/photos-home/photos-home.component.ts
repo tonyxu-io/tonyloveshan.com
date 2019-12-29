@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GaEventService } from '../ga-event.service';
 import { InstagramAccountService } from '../instagram-account.service'
 import { Observable } from 'rxjs';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -14,7 +15,7 @@ export class PhotosHomeComponent implements OnInit {
   instagramAccount$: Observable<Object>;
   faInstagram = faInstagram;
 
-  constructor(private instagramAccountService: InstagramAccountService) {
+  constructor(private instagramAccountService: InstagramAccountService, private gaEvent: GaEventService) {
   }
 
   ngOnInit() {
