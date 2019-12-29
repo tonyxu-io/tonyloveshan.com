@@ -31,6 +31,7 @@ export default {
     "san-francisco-city-hall-wedding-ceremony": "旧金山市政厅婚礼仪式",
     "las-vegas-2019": "拉斯维加斯之旅 // 自助餐、赌场、马蹄湾、大峡谷、喷泉表演",
     "portland-2019": "波特兰旅行游记 2019 // 波特兰市区、书店、海边、咖啡吧、餐厅。",
-    "maui-hawaii-2019": "夏威夷茂宜岛蜜月之旅 2019"
+    "maui-hawaii-2019": "夏威夷茂宜岛蜜月之旅 2019",
+    "follow": "关注"
   }
 }

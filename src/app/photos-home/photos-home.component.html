@@ -1,62 +1,43 @@
-<section class="section">
+<section class="section" *ngIf="instagramAccount$ | async as instagramAccount else noData">
   <div class="container">
-    <h3 class="title is-3">{{ 'photos' | translate }}</h3>
-    <a name="wedding-ceremony"></a> 
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-danger">
-          <div class="content">
-            <p class="title">{{ 'wedding-ceremony' | translate }}</p>
-            <p class="subtitle">
-              <div>{{ 'san-francisco-city-hall-california' | translate }}</div>
-              <div>{{ 'june-18-2019' | translate }}</div>
+    <h3 class="title is-3">{{ instagramAccount.name }}</h3>
+    <div class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+         <div class="buttons watchButtons is-right">
+            <a class="button is-danger is-outlined"
+              href="https://www.instagram.com/{{instagramAccount.username}}"
+              (click)="emitInstagramFollowClick()">
+              <span class="icon">
+                <fa-icon [icon]="faInstagram"></fa-icon>
+              </span>
+              <span>{{ 'follow' | translate }} @{{instagramAccount.username}}</span>
+            </a>
           </div>
-        </article>
+        </div>
       </div>
-      <div class="tile is-vertical is-8">
-      <div class="tile is-parent">
-            <figure class="tile is-child image is-16by9">
-              <a href="/vlogs/san-francisco-city-hall-wedding-ceremony">
-                  <img src="/assets/images/photos/wedding-video-play.png">
-
-              </a>
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-12-mobile is-6-tablet is-3-desktop" *ngFor="let post of instagramAccount.media.data">
+        <a href="{{post.permalink}}">
+          <div class="card is-slightly-rounded">
+            <div class="card-image">
+              <figure class="image">
+                  <img *ngIf="post.media_type != 'VIDEO'" src="{{post.media_url}}" alt="{{post.caption}}" class="is-slightly-rounded">
+                  <video *ngIf="post.media_type == 'VIDEO'" autoplay loop [muted]="'muted'">
+                    <source media="(min-width: 640px)" src="{{post.media_url}}">
+                  </video>
               </figure>
-        </div>
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <figure class="tile is-child image is-3by2">
-              <img src="/assets/images/photos/_DSC8707.JPG">
-            </figure>
-            <figure class="tile is-child image is-3by2">
-              <img src="/assets/images/photos/_MGL1837.JPG">
-            </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                  <p class="subtitle">
+                    {{post.caption}}
+                  </p>
+              </div>
+            </div>
           </div>
-          <div class="tile is-parent">
-            <figure class="tile is-child image is-2by3">
-              <img src="/assets/images/photos/_DSC8586.JPG">
-            </figure>
-          </div>
-        </div>
-        <div class="tile is-parent">
-          <figure class="tile is-child image is-3by2">
-            <img src="/assets/images/photos/_MGL1927.JPG">
-          </figure>
-        </div>
-        <div class="tile">
-          <div class="tile is-parent">
-            <figure class="tile is-child image is-2by3">
-              <img src="/assets/images/photos/_MGL1923.JPG">
-            </figure>
-          </div>
-          <div class="tile is-parent is-vertical">
-            <figure class="tile is-child image is-3by2">
-              <img src="/assets/images/photos/_MGL1991.JPG">
-            </figure>
-            <figure class="tile is-child image is-3by2">
-              <img src="/assets/images/photos/_MGL1905.JPG">
-            </figure>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
