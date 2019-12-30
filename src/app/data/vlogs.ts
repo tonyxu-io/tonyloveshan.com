@@ -81,7 +81,7 @@ export default {
     {
       title: "Maui Hawaii Honeymoon Trip at Andaz Maui Resort",
       slug: "maui-hawaii-2019",
-      youtubeId: "6LHVJos3M20",
+      youtubeId: "bxqAX_q-zNs",
       bilibiliId: "80983510",
       thumbnailUrl:
         "/assets/images/vlogs/maui-hawaii-2019.png",
