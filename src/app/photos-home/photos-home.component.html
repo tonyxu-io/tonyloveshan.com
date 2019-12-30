@@ -24,7 +24,7 @@
             <div class="card-image">
               <figure class="image">
                   <img *ngIf="post.media_type != 'VIDEO'" src="{{post.media_url}}" alt="{{post.caption}}" class="is-slightly-rounded">
-                  <video *ngIf="post.media_type == 'VIDEO'" autoplay loop [muted]="'muted'">
+                  <video *ngIf="post.media_type == 'VIDEO'" autoplay loop [muted]="'muted'" playsinline>
                     <source media="(min-width: 640px)" src="{{post.media_url}}">
                   </video>
               </figure>
