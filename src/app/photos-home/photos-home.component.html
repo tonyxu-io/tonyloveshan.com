@@ -1,4 +1,5 @@
-<section class="section" *ngIf="instagramAccount$ | async as instagramAccount">
+<app-loading-spinner *ngIf="!instagramAccount$"></app-loading-spinner>
+<section class="section" *ngIf="instagramAccount$">
   <div class="container">
     <div class="level">
       <div class="level-left">
@@ -8,7 +9,7 @@
               <fa-icon [icon]="faInstagram"></fa-icon>
             </span>
             <span>
-              {{ instagramAccount.name }}
+              {{ instagramAccount$.name }}
             </span>
           </h3>
         </div>
@@ -17,20 +18,20 @@
         <div class="level-item">
           <div class="buttons watchButtons is-right">
             <a class="button is-danger is-outlined"
-              href="https://www.instagram.com/{{instagramAccount.username}}"
+              href="https://www.instagram.com/{{instagramAccount$.username}}"
               (click)="emitInstagramFollowClick()">
               <span class="icon">
                 <fa-icon [icon]="faInstagram"></fa-icon>
               </span>
-              <span>{{ 'follow' | translate }} @{{instagramAccount.username}}</span>
+              <span>{{ 'follow' | translate }} @{{instagramAccount$.username}}</span>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div>{{ instagramAccount.biography }}</div> <br>
+    <div>{{ instagramAccount$.biography }}</div> <br>
     <div class="columns is-multiline">
-      <div class="column is-12-mobile is-6-tablet is-4-desktop" *ngFor="let post of instagramAccount.media.data">
+      <div class="column is-12-mobile is-6-tablet is-4-desktop" *ngFor="let post of instagramAccount$.media.data">
         <a href="{{post.permalink}}">
           <div class="card is-slightly-rounded">
             <div class="card-image">
