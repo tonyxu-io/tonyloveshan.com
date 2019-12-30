@@ -3,7 +3,14 @@
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-          <h3 class="title is-3">{{ instagramAccount.name }}</h3>
+          <h3 class="title is-3">
+            <span class="icon">
+              <fa-icon [icon]="faInstagram"></fa-icon>
+            </span>
+            <span>
+              {{ instagramAccount.name }}
+            </span>
+          </h3>
         </div>
       </div>
       <div class="level-right">
