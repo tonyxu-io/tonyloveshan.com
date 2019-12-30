@@ -13,7 +13,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 })
 export class PhotosHomeComponent implements OnInit {
 
-  instagramAccount$: Observable<Object>;
+  instagramAccount$: any;
   faInstagram = faInstagram;
 
   constructor(private titleService: Title ,private instagramAccountService: InstagramAccountService, private gaEvent: GaEventService) {
@@ -21,7 +21,11 @@ export class PhotosHomeComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle("Photos - Tony ❤️ Helen")
-    this.instagramAccount$ = this.instagramAccountService.getInstagramAccount()
+    this.instagramAccountService.getInstagramAccount().subscribe(
+      res => {
+        this.instagramAccount$ = res
+      }
+    )
   }
 
   emitInstagramFollowClick() {
