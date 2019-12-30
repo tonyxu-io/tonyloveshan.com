@@ -1,10 +1,14 @@
 <section class="section" *ngIf="instagramAccount$ | async as instagramAccount">
   <div class="container">
-    <h3 class="title is-3">{{ instagramAccount.name }}</h3>
-    <div class="level is-mobile">
+    <div class="level">
       <div class="level-left">
         <div class="level-item">
-         <div class="buttons watchButtons is-right">
+          <h3 class="title is-3">{{ instagramAccount.name }}</h3>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <div class="buttons watchButtons is-right">
             <a class="button is-danger is-outlined"
               href="https://www.instagram.com/{{instagramAccount.username}}"
               (click)="emitInstagramFollowClick()">
@@ -17,24 +21,18 @@
         </div>
       </div>
     </div>
+    <div>{{ instagramAccount.biography }}</div> <br>
     <div class="columns is-multiline">
       <div class="column is-12-mobile is-6-tablet is-4-desktop" *ngFor="let post of instagramAccount.media.data">
         <a href="{{post.permalink}}">
           <div class="card is-slightly-rounded">
             <div class="card-image">
-              <figure class="image">
-                  <img *ngIf="post.media_type != 'VIDEO'" src="{{post.media_url}}" alt="{{post.caption}}" class="is-slightly-rounded">
-                  <video *ngIf="post.media_type == 'VIDEO'" autoplay loop [muted]="'muted'" playsinline poster="{{post.thumbnail_url}}">
+              <figure class="image is-1by1">
+                  <img *ngIf="post.media_type != 'VIDEO'" src="{{post.media_url}}" alt="{{post.caption}}" class="is-slightly-rounded" style="object-fit: cover;">
+                  <video *ngIf="post.media_type == 'VIDEO'" autoplay loop [muted]="'muted'" playsinline poster="{{post.thumbnail_url}}" style="object-fit: cover;">
                     <source media="(min-width: 640px)" src="{{post.media_url}}">
                   </video>
               </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                  <p class="subtitle">
-                    {{post.caption}}
-                  </p>
-              </div>
             </div>
           </div>
         </a>

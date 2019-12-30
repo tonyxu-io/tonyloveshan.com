@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { GaEventService } from '../ga-event.service';
 import { InstagramAccountService } from '../instagram-account.service'
 import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -15,10 +16,11 @@ export class PhotosHomeComponent implements OnInit {
   instagramAccount$: Observable<Object>;
   faInstagram = faInstagram;
 
-  constructor(private instagramAccountService: InstagramAccountService, private gaEvent: GaEventService) {
+  constructor(private titleService: Title ,private instagramAccountService: InstagramAccountService, private gaEvent: GaEventService) {
   }
 
   ngOnInit() {
+    this.titleService.setTitle("Photos - Tony ❤️ Helen")
     this.instagramAccount$ = this.instagramAccountService.getInstagramAccount()
   }
 
