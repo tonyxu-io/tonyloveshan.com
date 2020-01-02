@@ -32,6 +32,7 @@ export default {
     "las-vegas-2019": "Las Vegas Trip 2019 // Buffet, Casino, Horseshoe Bend, Grand Canyon, Water Show",
     "portland-2019": "Portland Trip 2019 // Downtown, Bok Bok, Vizcaya Museum & Gardens, Nong's Khao Man Gai, Tea Bar.",
     "maui-hawaii-2019": "Maui Hawaii Honeymoon Trip at Andaz Maui Resort",
-    "follow": "Follow"
+    "follow": "Follow",
+    "loading-from-instagram": "Loading photos from Instagram..."
   }
 }

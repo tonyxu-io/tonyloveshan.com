@@ -1,4 +1,4 @@
-<app-loading-spinner *ngIf="!instagramAccount$"></app-loading-spinner>
+<app-loading-spinner *ngIf="!instagramAccount$" [message]="'loading-from-instagram' | translate"></app-loading-spinner>
 <section class="section" *ngIf="instagramAccount$">
   <div class="container">
     <div class="level">
