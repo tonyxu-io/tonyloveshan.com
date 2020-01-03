@@ -1,6 +1,6 @@
 # Tonyloveshan
 
-[![Build Status](https://travis-ci.org/tonyxu-io/tonyloveshan.com.svg?branch=master)](https://travis-ci.org/tonyxu-io/tonyloveshan.com)
+[![Actions Status](https://github.com/tonyxu-io/tonyloveshan.com/workflows/Build_And_Deploy_To_Firebase_Hosting/badge.svg)](https://github.com/tonyxu-io/tonyloveshan.com/actions)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
