@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import vlogsData from '../data/vlogs';
+
 import { GaEventService } from '../ga-event.service';
+import { Title } from '@angular/platform-browser';
+import { YoutubeChannelVideosService } from '../youtube-channel-videos.service'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-vlogs-home',
@@ -11,22 +12,18 @@ import { GaEventService } from '../ga-event.service';
 })
 export class VlogsHomeComponent implements OnInit {
 
-  vlogs$: Object;
   faYoutube = faYoutube;
+  youtubeVideos$: any;
 
-  constructor(private titleService: Title, private gaEvent: GaEventService) { }
+  constructor(private titleService: Title, private gaEvent: GaEventService, private youtubeChannelService: YoutubeChannelVideosService) { }
 
   ngOnInit() {
-    var data = vlogsData.data;
-    data.sort(function(a,b) {
-      return b["timestamp"] - a["timestamp"];
-    })
-    this.vlogs$ = data;
     this.titleService.setTitle("Vlogs - Tony ❤️ Helen")
-  }
-
-  getDate(vlog) {
-    return new Date(vlog["timestamp"])
+    this.youtubeChannelService.getYoutubeChannelVideos().subscribe(
+      res => {
+        this.youtubeVideos$ = res
+      }
+    )
   }
 
   emitYouTubeSubscribeClick() {

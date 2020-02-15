@@ -7,8 +7,6 @@
           <div class="buttons watchButtons">
             <a class="button is-danger"
               href="https://www.youtube.com/channel/UCXXumJ4mQ025Fm7by0WA0CA">{{ 'youtube' | translate }}</a>
-            <a class="button is-info"
-              href="http://space.bilibili.com/383862434/channel/detail?cid=56093">{{ 'bilibili' | translate }}</a>
           </div>
         </div>
       </div>
@@ -28,25 +26,22 @@
       </div>
     </div>
     <div class="columns is-multiline">
-      <div class="column is-12-mobile is-6-tablet is-3-desktop" *ngFor="let vlog of vlogs$">
-        <div class="card is-slightly-rounded">
+      <div class="column is-12-mobile is-6-tablet is-3-desktop" *ngFor="let video of youtubeVideos$.items">
+        <div class="card is-slightly-rounded" *ngIf='video.snippet.resourceId.kind =="youtube#video"'>
           <div class="card-image">
             <figure class="image">
-              <a href="/vlogs/{{vlog.slug}}">
-                <img src="{{vlog.thumbnailUrl}}" alt="{{vlog.title}}" class="is-slightly-rounded">
+              <a href="/vlogs/{{video.snippet.resourceId.videoId}}">
+                <img src="{{video.snippet.thumbnails.high.url}}" alt="{{video.snippet.title}}" class="is-slightly-rounded">
               </a>
             </figure>
           </div>
           <div class="card-content">
             <div class="content">
-              <a href="/vlogs/{{vlog.slug}}" class="has-text-black">
+              <a href="/vlogs/{{video.snippet.resourceId.videoId}}" class="has-text-black">
                 <p class="title is-4">
-                  {{vlog.title}}
+                  {{video.snippet.title}}
                 </p>
               </a>
-              <p class="subtitle">
-                {{getDate(vlog).toLocaleDateString()}}
-              </p>
             </div>
           </div>
         </div>

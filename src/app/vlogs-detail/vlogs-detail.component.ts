@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GaEventService } from '../ga-event.service';
 import { Title } from '@angular/platform-browser';
-import { TranslatePipe } from '../translate.pipe';
+import { YoutubeChannelVideosService } from '../youtube-channel-videos.service';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
-import vlogsData from '../data/vlogs';
 
 @Component({
   selector: 'app-vlogs-detail',
@@ -14,29 +13,32 @@ import vlogsData from '../data/vlogs';
 })
 export class VlogsDetailComponent implements OnInit {
 
-  slug$: string;
-  vlog$: Object;
+  videoId$: string;
+  videoTitle$: string;
+  videoThumbnail$: string;
+  videoDate$: string;
   faYoutube = faYoutube;
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private gaEvent: GaEventService, private translatePipe: TranslatePipe) {
-    this.route.params.subscribe( params => this.slug$ = params.slug)
+  constructor(private route: ActivatedRoute, private titleService: Title, private gaEvent: GaEventService, private youtubeChannelService: YoutubeChannelVideosService) {
+    this.route.params.subscribe( params => this.videoId$ = params.slug)
   }
 
   ngOnInit() {
-    var selectedVlog = vlogsData.data.filter(vlog => {
-      return vlog["slug"] === this.slug$
-    })
-    this.vlog$ = selectedVlog[0];
-    let translatedTitle = this.translatePipe.transform(this.vlog$["slug"]);
-    this.titleService.setTitle(translatedTitle + " - Tony ❤️ Helen")
-  }
-
-  getDate() {
-    return new Date(this.vlog$["timestamp"])
+    this.youtubeChannelService.getYoutubeChannelVideos().subscribe(
+      res => {
+        var selectedVideo = res['items'].filter(video => {
+          return video.snippet.resourceId.videoId === this.videoId$
+        })[0]
+        this.videoTitle$ = selectedVideo.snippet.title;
+        this.videoThumbnail$ = selectedVideo.snippet.thumbnails.high.url;
+        this.videoDate$ = selectedVideo.snippet.publishedAt.split("T")[0]
+        this.titleService.setTitle(this.videoTitle$ + " - Tony ❤️ Helen")
+      }
+    )
   }
 
   emitVideoEvent(eventName) {
-    this.gaEvent.emitEvent("Video", eventName, this.vlog$["title"])
+    this.gaEvent.emitEvent("Video", eventName, this.videoTitle$)
   }
 
   emitYouTubeSubscribeClick() {
