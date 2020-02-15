@@ -9,6 +9,7 @@ export default {
     "columbia-mo": "美国密苏里哥伦比亚",
     "we-live-in": "居住于",
     "our-vlogs": "我们的视频",
+    "san-francisco-bay-area": "旧金山湾区",
     "tony-and-helen-vlogs": "Tony and Helen Vlogs",
     "designed-by": "设计与制作 ",
     "subscribe": "订阅",
@@ -20,6 +21,7 @@ export default {
     "more-photos": "更多照片",
     "follow": "关注",
     "loading-from-instagram": "正在从Instagram加载照片流...",
-    "loading-from-youtube": "正在从YouTube加载视频流..."
+    "loading-from-youtube": "正在从YouTube加载视频流...",
+    "youtube_summary": "We live in the San Francisco bay area. Shooting vlogs has just become one of the most exciting things in our lives."
   }
 }

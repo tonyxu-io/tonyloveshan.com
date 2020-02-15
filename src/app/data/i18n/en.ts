@@ -20,6 +20,7 @@ export default {
     "more-photos": "more photos",
     "follow": "Follow",
     "loading-from-instagram": "Loading photos from Instagram...",
-    "loading-from-youtube": "Loading videos from YouTube..."
+    "loading-from-youtube": "Loading videos from YouTube...",
+    "youtube_summary": "We live in the San Francisco bay area. Shooting vlogs has just become one of the most exciting things in our lives."
   }
 }
