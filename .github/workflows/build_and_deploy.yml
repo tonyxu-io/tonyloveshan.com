@@ -1,4 +1,4 @@
-name: Build_And_Deploy_To_Firebase_Hosting
+name: Build_And_Deploy_To_Firebase
 
 on:
   push:
@@ -17,9 +17,10 @@ jobs:
         node-version: '10.x'
     - run: npm install
     - run: npm install -g @angular/cli
+    - run: npm install --prefix functions
     - run: ng build --prod
     - uses: w9jds/firebase-action@master
       with:
-        args: deploy --only hosting --project tonyloveshan-com-58a99
+        args: deploy --project tonyloveshan-com-58a99
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

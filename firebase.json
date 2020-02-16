@@ -8,9 +8,25 @@
     ],
     "rewrites": [
       {
+        "source": "/api/getYouTubeVideos",
+        "function": "getYouTubeVideos"
+      },
+      {
+        "source": "/api/getInstagramAccount",
+        "function": "getInstagramAccount"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
 }

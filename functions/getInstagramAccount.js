@@ -1,0 +1,38 @@
+const functions = require('firebase-functions');
+const axios = require('axios');
+const cors = require('cors')({
+  origin: true,
+});
+
+
+const igUrl = `https://graph.facebook.com/v5.0/17841422126220075?fields=media{caption,comments_count,like_count, media_url,media_type,permalink,thumbnail_url},profile_picture_url,username,biography,name&access_token=${functions.config().api.facebookaccesstoken}`
+
+
+function getDataFromFBAPI() {
+  return axios.get(igUrl);
+}
+
+function getDataFromFirebase() {
+  return axios.get('https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json')
+}
+
+function storeDataToFirebase(data) {
+  data['timestamp'] = Date.now()
+  axios.put('https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json', data)
+}
+
+async function getData() {
+  let response = await getDataFromFirebase();
+  if (!response.data || (Date.now() - response.data['timestamp'] > 2 * 60 * 60 * 1000)) {
+    response = await getDataFromFBAPI()
+    storeDataToFirebase(response.data)
+  }
+  return response
+}
+
+module.exports = async function (req, res) {
+  return cors(req,res, async () => {
+    const response = await getData();
+    return res.status(200).send(response.data)
+  })
+}
