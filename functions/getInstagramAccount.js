@@ -13,7 +13,7 @@ function getDataFromFBAPI() {
 }
 
 function getDataFromFirebase() {
-  return axios.get('https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json')
+  return axios.get(`https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json?access_token=${functions.config().api.firebaseaccesstoken}`)
 }
 
 function storeDataToFirebase(data) {

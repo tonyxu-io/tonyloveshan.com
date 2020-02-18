@@ -11,7 +11,7 @@ function getDataFromGoogleAPI() {
 }
 
 function getDataFromFirebase() {
-  return axios.get('https://tonyloveshan-com-58a99.firebaseio.com/youtube_video_list.json');
+  return axios.get(`https://tonyloveshan-com-58a99.firebaseio.com/youtube_video_list.json?access_token=${functions.config().api.firebaseaccesstoken}`);
 }
 
 function storeDataToFirebase(data) {
