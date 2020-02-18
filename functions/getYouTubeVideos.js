@@ -4,19 +4,27 @@ const cors = require('cors')({
   origin: true,
 });
 
+const {
+  db,
+} = require('./admin');
+
 function getDataFromGoogleAPI() {
   console.log(functions.config())
   const youtubeURL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUXXumJ4mQ025Fm7by0WA0CA&maxResults=50&key=${functions.config().api.youtubekey}`;
   return axios.get(youtubeURL);
 }
 
-function getDataFromFirebase() {
-  return axios.get(`https://tonyloveshan-com-58a99.firebaseio.com/youtube_video_list.json?access_token=${functions.config().api.firebaseaccesstoken}`);
+async function getDataFromFirebase() {
+  var ref = db.ref("/youtube_video_list");
+  const value =  await ref.once("value", function(snapshot) {
+    return snapshot.val()
+  });
+  return value
 }
 
-function storeDataToFirebase(data) {
+async function storeDataToFirebase(data) {
   data['timestamp'] = Date.now();
-  axios.put('https://tonyloveshan-com-58a99.firebaseio.com/youtube_video_list.json', data);
+  await db.ref('/youtube_video_list').set(data)
 }
 
 async function getData() {

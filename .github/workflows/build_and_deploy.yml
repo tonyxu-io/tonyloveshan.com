@@ -12,6 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Decrypt large secret
+      run: ./.github/scripts/decrypt_secret.sh
+      env:
+        GPG_SECRETS: ${{ secrets.GPG_SECRETS }}
     - uses: actions/setup-node@master
       with:
         node-version: '10.x'
@@ -24,3 +28,4 @@ jobs:
         args: deploy --project tonyloveshan-com-58a99
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        GOOGLE_APPLICATION_CREDENTIALS: ./secrets/service_account_key.json

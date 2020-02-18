@@ -4,6 +4,10 @@ const cors = require('cors')({
   origin: true,
 });
 
+const {
+  db,
+} = require('./admin');
+
 
 const igUrl = `https://graph.facebook.com/v5.0/17841422126220075?fields=media{caption,comments_count,like_count, media_url,media_type,permalink,thumbnail_url},profile_picture_url,username,biography,name&access_token=${functions.config().api.facebookaccesstoken}`
 
@@ -12,13 +16,17 @@ function getDataFromFBAPI() {
   return axios.get(igUrl);
 }
 
-function getDataFromFirebase() {
-  return axios.get(`https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json?access_token=${functions.config().api.firebaseaccesstoken}`)
+async function getDataFromFirebase() {
+  var ref = db.ref("/instagram_account");
+  const value =  await ref.once("value", function(snapshot) {
+    return snapshot.val()
+  });
+  return value
 }
 
-function storeDataToFirebase(data) {
+async function storeDataToFirebase(data) {
   data['timestamp'] = Date.now()
-  axios.put('https://tonyloveshan-com-58a99.firebaseio.com/instagram_account.json', data)
+  await db.ref('/instagram_account').set(data)
 }
 
 async function getData() {
