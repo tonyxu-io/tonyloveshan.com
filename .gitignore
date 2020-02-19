@@ -42,4 +42,4 @@ testem.log
 
 # End of https://www.gitignore.io/api/angular
 
-./secrets/service_account_key.json
+secrets/service_account_key.json
