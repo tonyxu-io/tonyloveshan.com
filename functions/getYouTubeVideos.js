@@ -29,7 +29,7 @@ async function storeDataToFirebase(data) {
 
 async function getData() {
   let response = await getDataFromFirebase();
-  if (!response.data || (Date.now() - response.data['timestamp'] > 2 * 60 * 60 * 1000)) {
+  if (!response.data || (Date.now() - response.data['timestamp'] > 24 * 60 * 60 * 1000)) {
     response = await getDataFromGoogleAPI();
     storeDataToFirebase(response.data);
   }
