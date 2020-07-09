@@ -9,7 +9,7 @@ const {
 } = require('./admin');
 
 
-const igUrl = `https://graph.facebook.com/v5.0/17841422126220075?fields=media{caption,comments_count,like_count, media_url,media_type,permalink,thumbnail_url},profile_picture_url,username,biography,name&access_token=${functions.config().api.facebookaccesstoken}`
+const igUrl = `https://graph.facebook.com/v5.0/17841422126220075?fields=media{caption,comments_count,like_count,media_url,media_type,permalink,thumbnail_url},profile_picture_url,username,biography,name&access_token=${functions.config().api.facebookaccesstoken}`
 
 
 function getDataFromFBAPI() {

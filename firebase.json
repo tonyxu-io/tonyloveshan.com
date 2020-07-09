@@ -16,6 +16,10 @@
         "function": "getInstagramAccount"
       },
       {
+        "source": "/api/getMapLocations",
+        "function": "getMapLocations"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
@@ -28,5 +32,11 @@
       "**/.*",
       "**/node_modules/**"
     ]
+  },
+  "emulators": {
+    "functions": {
+      "host": "localhost",
+      "port": "9023"
+    }
   }
 }

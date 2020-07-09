@@ -2,8 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {MapStyles} from './mapStype';
-import MapOptions = google.maps.MapOptions;
-import footprintsData from '../data/footprints'
+import { MapLocationsService } from '../map-locations.service'
 
 @Component({
   selector: 'app-footprint-map',
@@ -15,9 +14,20 @@ export class FootprintMapComponent implements OnInit {
   @ViewChild('gmap', { static: true }) gmapElement: any;
   map: google.maps.Map;
 
-  constructor() { }
+  footPrintLocations$: any;
+
+  constructor(private mapLocationsService:MapLocationsService) { }
 
   ngOnInit() {
+    this.mapLocationsService.getMapLocations().subscribe(
+      res => {
+        this.footPrintLocations$ = res;
+        this.setupGoogleMap();
+      }
+    )
+  }
+
+  setupGoogleMap() {
     var image = {
       url: 'https://tonyloveshan.com/assets/images/heart.png',
       scaledSize: new google.maps.Size(15, 15),
@@ -31,14 +41,13 @@ export class FootprintMapComponent implements OnInit {
       styles: MapStyles.clearStyle
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    var footprints = footprintsData.data
-    for (var i = 0; i < footprints.length; i++) {
-      var coords = footprints[i].coordinates;
-      var latLng = new google.maps.LatLng(coords[1], coords[0]);
+    var footprints = this.footPrintLocations$
+    for (var footprint of footprints) {
+      var latLng = new google.maps.LatLng(Number(footprint[2]), Number(footprint[3]));
       var marker = new google.maps.Marker({
         position: latLng,
         map: this.map,
-        title: footprints[i].title,
+        title: footprint[0],
         icon: image
       });
     }
