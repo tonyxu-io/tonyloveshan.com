@@ -35,14 +35,14 @@
         <div class="card is-slightly-rounded" *ngIf='video.snippet.resourceId.kind =="youtube#video"'>
           <div class="card-image">
             <figure class="image">
-              <a href="/vlogs/{{video.snippet.resourceId.videoId}}">
-                <img src="{{video.snippet.thumbnails.high.url}}" alt="{{video.snippet.title}}" class="is-slightly-rounded">
+              <a href="/vlogs/{{encodeValue(video.snippet.title)}}">
+                <img src="{{video.snippet.thumbnails.maxres.url}}" alt="{{video.snippet.title}}" class="is-slightly-rounded">
               </a>
             </figure>
           </div>
           <div class="card-content">
             <div class="content">
-              <a href="/vlogs/{{video.snippet.resourceId.videoId}}" class="has-text-black">
+              <a href="/vlogs/{{encodeValue(video.snippet.title)}}" class="has-text-black">
                 <p class="title is-4">
                   {{video.snippet.title}}
                 </p>

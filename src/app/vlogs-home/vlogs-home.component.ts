@@ -26,6 +26,10 @@ export class VlogsHomeComponent implements OnInit {
     )
   }
 
+  encodeValue(value: string) {
+    return value.replace(/[^a-zA-Z0-9]/g, '');
+  }
+
   emitYouTubeSubscribeClick() {
     this.gaEvent.emitEvent("Video", "YouTubeChannelSubscription")
   }

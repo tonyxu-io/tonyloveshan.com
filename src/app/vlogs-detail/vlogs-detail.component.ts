@@ -13,6 +13,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 })
 export class VlogsDetailComponent implements OnInit {
 
+  slug$: string;
   videoId$: string;
   videoTitle$: string;
   videoThumbnail$: string;
@@ -20,19 +21,20 @@ export class VlogsDetailComponent implements OnInit {
   faYoutube = faYoutube;
 
   constructor(private route: ActivatedRoute, private titleService: Title, private gaEvent: GaEventService, private youtubeChannelService: YoutubeChannelVideosService) {
-    this.route.params.subscribe( params => this.videoId$ = params.slug)
+    this.route.params.subscribe( params => this.slug$ = params.slug)
   }
 
   ngOnInit() {
     this.youtubeChannelService.getYoutubeChannelVideos().subscribe(
       res => {
         var selectedVideo = res['items'].filter(video => {
-          return video.snippet.resourceId.videoId === this.videoId$
-        })[0]
+          return (video.snippet.title.replace(/[^a-zA-Z0-9]/g, '') === this.slug$) || (video.snippet.resourceId.videoId === this.slug$);
+        })[0];
+        this.videoId$ = selectedVideo.snippet.resourceId.videoId;
         this.videoTitle$ = selectedVideo.snippet.title;
         this.videoThumbnail$ = selectedVideo.snippet.thumbnails.high.url;
-        this.videoDate$ = selectedVideo.snippet.publishedAt.split("T")[0]
-        this.titleService.setTitle(this.videoTitle$ + " - Tony ❤️ Helen")
+        this.videoDate$ = selectedVideo.snippet.publishedAt.split("T")[0];
+        this.titleService.setTitle(this.videoTitle$ + " - Tony ❤️ Helen");
       }
     )
   }
