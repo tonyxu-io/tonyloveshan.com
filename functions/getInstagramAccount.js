@@ -18,7 +18,7 @@ function getDataFromFBAPI() {
 
 async function getDataFromFirebase() {
   var ref = db.ref("/instagram_account");
-  const value =  await ref.once("value", function(snapshot) {
+  const value =  await ref.once("value", (snapshot) => {
     return snapshot.val()
   });
   return value

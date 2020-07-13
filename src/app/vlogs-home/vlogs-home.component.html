@@ -30,6 +30,20 @@
       </div>
     </div>
     <div>{{ 'youtube_summary' | translate }}</div> <br>
+    <div class="columns">
+      <div class="column">
+        <div class="field is-grouped" *ngIf="youtubePlayLists$">
+          <p class="control">
+            <a routerLink="./" class="button is-rounded" [ngClass]="{'is-info' : !this.playlistId$}">All</a>
+          </p>
+          <ng-container *ngFor="let playlist of youtubePlayLists$.items">
+            <p class="control">
+              <button class="button is-rounded" [ngClass]="{'is-info' : playlist.id == this.playlistId$}" (click)="filterByPlayList(playlist.id)">{{playlist.snippet.title}}</button>
+            </p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
     <div class="columns is-multiline">
       <div class="column is-12-mobile is-6-tablet is-3-desktop" *ngFor="let video of youtubeVideos$.items">
         <div class="card is-slightly-rounded" *ngIf='video.snippet.resourceId.kind =="youtube#video"'>
