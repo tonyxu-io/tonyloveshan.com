@@ -24,7 +24,13 @@ export class VlogsHomeComponent implements OnInit {
     this.titleService.setTitle("Vlogs - Tony ❤️ Helen")
     this.youtubeChannelService.getPlayLists().subscribe(
       res => {
-        this.youtubePlayLists$ = res
+        this.youtubePlayLists$ = res;
+        if (this.playlistId$) {
+          let playlist = res['items'].filter(playlist => playlist.id == this.playlistId$);
+          if (playlist) {
+            this.titleService.setTitle(`${playlist[0].snippet.title} - Vlogs - Tony ❤️ Helen`);
+          }
+        }
       }
     );
     this.route.queryParams
