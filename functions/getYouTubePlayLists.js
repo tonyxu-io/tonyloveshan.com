@@ -10,7 +10,7 @@ const {
 
 function getDataFromGoogleAPI() {
   console.log(functions.config())
-  const youtubeURL = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&fields=items(id%2Csnippet%2Ftitle)&channelId=UCXXumJ4mQ025Fm7by0WA0CA&maxResults=50&key=${functions.config().api.youtubekey}`;
+  const youtubeURL = `https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&fields=items(id,snippet.title,contentDetails.itemCount)&channelId=UCXXumJ4mQ025Fm7by0WA0CA&maxResults=50&key=${functions.config().api.youtubekey}`;
   return axios.get(youtubeURL);
 }
 

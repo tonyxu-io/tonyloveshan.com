@@ -28,7 +28,7 @@ export class VlogsHomeComponent implements OnInit {
         if (this.playlistId$) {
           let playlist = res['items'].filter(playlist => playlist.id == this.playlistId$);
           if (playlist) {
-            this.titleService.setTitle(`${playlist[0].snippet.title} - Vlogs - Tony ❤️ Helen`);
+            this.addPlayListToTitle(playlist.snippet.id);
           }
         }
       }
@@ -60,8 +60,16 @@ export class VlogsHomeComponent implements OnInit {
     this.playlistId$ = playlistId;
     this.youtubeChannelService.getVideos(playlistId).subscribe(
       res => {
-        this.youtubeVideos$ = res
+        this.youtubeVideos$ = res;
+        this.addPlayListToTitle(playlistId);
       }
     );
+  };
+
+  addPlayListToTitle(playlistId: string) {
+    let playlist = this.youtubePlayLists$.items.filter(playlist => playlist.id == playlistId);
+    if (playlist) {
+      this.titleService.setTitle(`${playlist[0].snippet.title} - Vlogs - Tony ❤️ Helen`);
+    }
   }
 }
