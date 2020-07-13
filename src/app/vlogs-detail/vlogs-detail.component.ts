@@ -25,7 +25,7 @@ export class VlogsDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.youtubeChannelService.getYoutubeChannelVideos().subscribe(
+    this.youtubeChannelService.getVideos().subscribe(
       res => {
         var selectedVideo = res['items'].filter(video => {
           return (video.snippet.title.replace(/[^a-zA-Z0-9]/g, '') === this.slug$) || (video.snippet.resourceId.videoId === this.slug$);

@@ -39,7 +39,9 @@ testem.log
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
+firebase-debug.log
 
 # End of https://www.gitignore.io/api/angular
 
 secrets/service_account_key.json
+firebase-debug.log

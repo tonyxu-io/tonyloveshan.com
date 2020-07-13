@@ -9,7 +9,15 @@ export class YoutubeChannelVideosService {
 
   constructor(public http: HttpClient) { }
 
-  getYoutubeChannelVideos(){
-    return this.http.get(`${environment.apiUrl}/getYouTubeVideos`);
+  getVideos(playlistId?:string) {
+    let url = `${environment.apiUrl}/getYouTubeVideos`;
+    if (playlistId) {
+      url += `?playlistId=${playlistId}`
+    }
+    return this.http.get(url);
+  }
+
+  getPlayLists() {
+    return this.http.get(`${environment.apiUrl}/getYouTubePlayLists`);
   }
 }

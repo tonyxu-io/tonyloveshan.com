@@ -12,6 +12,10 @@
         "function": "getYouTubeVideos"
       },
       {
+        "source": "/api/getYouTubePlayLists",
+        "function": "getYouTubePlayLists"
+      },
+      {
         "source": "/api/getInstagramAccount",
         "function": "getInstagramAccount"
       },
