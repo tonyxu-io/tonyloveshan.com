@@ -31,7 +31,7 @@
     </div>
     <div>{{ 'youtube_summary' | translate }}</div> <br>
     <div class="columns">
-      <div class="column">
+      <div class="column playlist-group">
         <div class="field is-grouped" *ngIf="youtubePlayLists$">
           <p class="control">
             <a routerLink="./" class="button is-rounded" [ngClass]="{'is-info' : !this.playlistId$}">All</a>

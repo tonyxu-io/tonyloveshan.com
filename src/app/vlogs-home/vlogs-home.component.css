@@ -15,3 +15,8 @@
 .card {
   height: 100%
 }
+
+.playlist-group {
+  overflow: auto;
+  white-space: nowrap;
+}
